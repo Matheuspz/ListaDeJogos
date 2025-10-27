@@ -1,0 +1,86 @@
+/* Importa a fonte Roboto */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #3f51b5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Linha abaixo do cabeçalho */
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 50px;
+}
+
+/* Conteúdo principal */
+main {
+    text-align: center;
+    margin-top: 60px;
+}
+
+main h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 25px;
+}
+
+.btn {
+    background-color: #3f51b5;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn i {
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    background-color: #32419d;
+    color: white;
+}
