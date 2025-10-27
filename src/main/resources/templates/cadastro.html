@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midas Games - Cadastro de Jogos</title>
+    <link th:href="@{/css/cadastro.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+    <div class="logo"><a href="/" style="color: black">Midas Games</a></div>
+    <nav>
+        <a href="cadastro" style="color: black">Cadastrar Jogos</a>
+        <a href="#">Listar todos</a>
+    </nav>
+</header>
+
+<hr>
+
+<!-- Conteúdo principal -->
+<main>
+    <a href="#" class="back"><i class="fas fa-chevron-left"></i></a>
+    <h1>Cadastro de Jogos</h1>
+
+    <form class="form-cadastro">
+        <input type="text" placeholder="Nome" required>
+        <input type="text" placeholder="Desenvolvedora" required>
+        <input type="number" step="0.01" placeholder="Preço" required>
+        <input type="url" placeholder="Url Imagem" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+
+</body>
+</html>
