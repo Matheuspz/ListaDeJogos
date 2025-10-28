@@ -23,8 +23,8 @@ public class JogosService {
         jogosRepository.deleteAll();
     }
 
-    public void createJogos() {
-
+    public void save(Jogos jogos) {
+        jogosRepository.save(jogos);
     }
 
 

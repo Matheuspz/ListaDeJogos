@@ -89,7 +89,7 @@ h1 {
 }
 
 .form-cadastro button {
-    background-color: #222;
+    background-color: #3f51b5;
     color: white;
     border: none;
     border-radius: 8px;
@@ -100,5 +100,5 @@ h1 {
 }
 
 .form-cadastro button:hover {
-    background-color: #000;
+    background-color: #242e7d;
 }

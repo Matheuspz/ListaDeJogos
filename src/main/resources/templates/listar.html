@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pessoa - Cadastro</title>
 </head>
+
 <body>
-$END$
+    <h1>Dados enviados pelo usuário:</h1>
+
+    <p>Titulo: <b th:text="${jogos.titulo}"/></p>
+    <p>desenvolvedora: <b th:text="${{jogos.desenvolvedora}}"/></p>
+    <p>preco: <b th:text="${jogos.preco}"/></p>
+    <p>urlImagem: <b th:text="${jogos.urlImagem}"/></p>
+    <p>descricao <b th:text="${jogos.descricao}"/></p>
 </body>
+
 </html>

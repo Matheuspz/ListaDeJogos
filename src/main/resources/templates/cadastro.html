@@ -12,9 +12,9 @@
 
 <!-- Cabeçalho -->
 <header>
-    <div class="logo"><a href="/" style="color: black">Midas Games</a></div>
+    <div class="logo"><a href="/" style="color: white">Midas Games</a></div>
     <nav>
-        <a href="cadastro" style="color: black">Cadastrar Jogos</a>
+        <a href="cadastro" style="color: white">Cadastrar Jogos</a>
         <a href="#">Listar todos</a>
     </nav>
 </header>
@@ -26,11 +26,12 @@
     <a href="#" class="back"><i class="fas fa-chevron-left"></i></a>
     <h1>Cadastro de Jogos</h1>
 
-    <form class="form-cadastro">
-        <input type="text" placeholder="Nome" required>
-        <input type="text" placeholder="Desenvolvedora" required>
-        <input type="number" step="0.01" placeholder="Preço" required>
-        <input type="url" placeholder="Url Imagem" required>
+    <form class="form-cadastro" th:action="@{/cadastro}" th:object="${Jogos}" method="post">
+        <input type="text" placeholder="Nome" required th:field="*{titulo}">
+        <input type="text" placeholder="Desenvolvedora" required th:field="*{desenvolvedora}">
+        <input type="number" step="0.01" placeholder="Preço" required th:field="*{preco}">
+        <input type="url" placeholder="Url Imagem" required th:field="*{urlImagem}">
+        <input type="text" placeholder="Descrição" th:field="*{descricao}">
         <button type="submit">Cadastrar</button>
     </form>
 </main>
