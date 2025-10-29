@@ -1,86 +1,106 @@
-/* Importa a fonte Roboto */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset */
+* {
     margin: 0;
-    background-color: #fff;
-    color: #000;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cabeçalho */
+/* Cores e fontes */
+:root {
+    --azul: #4e5b9e;
+    --amarelo: #f7f74d;
+    --fundo: #ffffff;
+    --fonte: 'Fredoka One', 'Nunito', sans-serif;
+}
+
+body {
+    background: var(--fundo);
+    font-family: 'Nunito', sans-serif;
+    color: var(--azul);
+}
+
+/* Header */
 header {
-    background-color: #3f51b5;
+    background: var(--azul);
     color: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    align-items: center;
+    padding: 1rem 3rem;
 }
 
-header .logo {
+.logo {
+    font-family: 'Fredoka One', cursive;
     font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
+    color: var(--amarelo);
+    text-decoration: none; /* remove sublinhado */
 }
 
-header nav a {
+.logo:hover {
+    opacity: 0.9; /* leve destaque ao passar o mouse */
+}
+
+
+nav a {
     color: white;
     text-decoration: none;
-    margin-left: 30px;
-    font-weight: 500;
+    font-weight: bold;
+    margin-left: 2rem;
+    transition: opacity 0.3s ease;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+nav a:hover {
+    opacity: 0.8;
 }
 
-/* Linha abaixo do cabeçalho */
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 0 50px;
-}
-
-/* Conteúdo principal */
+/* Main */
 main {
     text-align: center;
-    margin-top: 60px;
+    padding: 3rem 1rem;
+    border-top: 1px solid #ccc;
 }
 
-main h1 {
+h1 {
+    font-family: 'Fredoka One', cursive;
     font-size: 1.8rem;
-    line-height: 1.4;
-    font-weight: bold;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 /* Botões */
 .buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    gap: 25px;
+    gap: 2rem;
 }
 
 .btn {
-    background-color: #3f51b5;
+    background: var(--azul);
     color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: 0.3s;
-}
-
-.btn i {
-    font-size: 1.2rem;
+    gap: 0.8rem;
+    transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #32419d;
-    color: white;
+    background: #3f4c88;
+}
+
+/* Ícones entre os botões */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    color: var(--azul);
+}
+
+.divider i:nth-child(2) {
+    font-size: 2rem;
 }

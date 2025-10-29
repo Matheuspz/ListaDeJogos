@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midas Games - Cadastro de Jogos</title>
-    <link th:href="@{/css/cadastro.css}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Cadastro de Jogos - Midas Games</title>
+    <link rel="stylesheet" href="..\css\cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2d9b65e52.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<!-- Cabeçalho -->
 <header>
-    <div class="logo"><a href="/" style="color: white">Midas Games</a></div>
+    <a th:href="@{/}" class="logo">MIDAS TEAM</a>
     <nav>
-        <a href="cadastro" style="color: white">Cadastrar Jogos</a>
-        <a href="#">Listar todos</a>
+        <a th:href="@{/cadastro}">Cadastrar Jogos</a>
+        <a th:href="@{/listar}">Listar todos</a>
     </nav>
 </header>
 
-<hr>
-
-<!-- Conteúdo principal -->
 <main>
-    <a href="#" class="back"><i class="fas fa-chevron-left"></i></a>
+    <a href="#" class="back"><i class="fa-solid fa-chevron-left"></i></a>
+
     <h1>Cadastro de Jogos</h1>
 
-    <form class="form-cadastro" th:action="@{/cadastro}" th:object="${Jogos}" method="post">
-        <input type="text" placeholder="Nome" required th:field="*{titulo}">
-        <input type="text" placeholder="Desenvolvedora" required th:field="*{desenvolvedora}">
-        <input type="number" step="0.01" placeholder="Preço" required th:field="*{preco}">
-        <input type="url" placeholder="Url Imagem" required th:field="*{urlImagem}">
-        <input type="text" placeholder="Descrição" th:field="*{descricao}">
+    <form th:action="@{/cadastro}" th:object="${jogo}" method="post" class="form-jogos">
+        <input type="text" name="nome" placeholder="Nome" required th:field="*{titulo}">
+        <input type="text" name="descricao" placeholder="Descrição" required th:field="*{descricao}">
+        <input type="text" name="desenvolvedora" placeholder="Desenvolvedora" required th:field="*{desenvolvedora}">
+        <input type="number" step="0.01" name="preco" placeholder="Preço" required th:field="*{preco}">
+        <input type="url" name="urlImagem" placeholder="Url Imagem" required th:field="*{urlImagem}">
+
         <button type="submit">Cadastrar</button>
     </form>
 </main>
-
 </body>
 </html>

@@ -1,104 +1,138 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset */
+* {
     margin: 0;
-    background-color: #fff;
-    color: #000;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cabeçalho */
+/* Cores e fontes */
+:root {
+    --azul: #4e5b9e;
+    --amarelo: #f7f74d;
+    --fundo: #ffffff;
+    --fonte: 'Fredoka One', 'Nunito', sans-serif;
+}
+
+body {
+    background: var(--fundo);
+    font-family: 'Nunito', sans-serif;
+    color: var(--azul);
+}
+
+/* Header */
 header {
-    background-color: #3f51b5;
+    background: var(--azul);
     color: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    align-items: center;
+    padding: 1rem 3rem;
 }
 
-header .logo {
+.logo {
+    font-family: 'Fredoka One', cursive;
     font-size: 1.5rem;
-    font-weight: bold;
+    color: var(--amarelo);
+    text-decoration: none; /* remove sublinhado */
 }
 
-header nav a {
+.logo:hover {
+    opacity: 0.9; /* leve destaque ao passar o mouse */
+}
+
+
+nav a {
     color: white;
     text-decoration: none;
-    margin-left: 30px;
-    font-weight: 500;
+    font-weight: bold;
+    margin-left: 2rem;
+    transition: opacity 0.3s ease;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+nav a:hover {
+    opacity: 0.8;
 }
 
-/* Linha abaixo do cabeçalho */
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 0 50px;
-}
-
-/* Conteúdo principal */
+/* Main */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-top: 1px solid #ccc;
     position: relative;
 }
 
+/* Botão voltar */
 .back {
     position: absolute;
-    left: 10%;
-    top: 0;
-    color: black;
+    left: 3rem;
+    top: 3.5rem;
+    font-size: 1.5rem;
+    color: var(--azul);
     text-decoration: none;
-    font-size: 1.2rem;
 }
 
+.back:hover {
+    opacity: 0.7;
+}
+
+/* Título */
 h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    display: inline-block;
+    background: #2f2f2f;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+    margin-bottom: 2rem;
 }
 
 /* Formulário */
-.form-cadastro {
+.form-jogos {
+    width: 300px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 30px;
-    width: 300px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    gap: 1rem;
 }
 
-.form-cadastro input {
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ccc;
+.form-jogos input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
-}
-
-.form-cadastro input:focus {
+    font-family: 'Nunito', sans-serif;
     outline: none;
-    border-color: #3f51b5;
-    box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+    transition: border 0.3s;
 }
 
-.form-cadastro button {
-    background-color: #3f51b5;
+.form-jogos input:focus {
+    border-color: var(--azul);
+}
+
+button {
+    background: black;
     color: white;
+    padding: 0.8rem;
     border: none;
     border-radius: 8px;
-    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.form-cadastro button:hover {
-    background-color: #242e7d;
+button:hover {
+    background: #222;
+}
+
+/* Linha inferior */
+main::after {
+    content: "";
+    display: block;
+    width: 90%;
+    margin: 3rem auto 0;
+    border-bottom: 1px solid #ccc;
 }

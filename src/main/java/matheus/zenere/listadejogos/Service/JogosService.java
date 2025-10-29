@@ -6,6 +6,7 @@ import matheus.zenere.listadejogos.Repository.JogosRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class JogosService {
@@ -19,13 +20,16 @@ public class JogosService {
     public List<Jogos> findAll() {
         return jogosRepository.findAll();
     }
-    public void deleteAll() {
-        jogosRepository.deleteAll();
-    }
 
     public void save(Jogos jogos) {
         jogosRepository.save(jogos);
     }
+
+    public Jogos findById(Long id) {
+        return jogosRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Jogo não encontrado"));
+    }
+
 
 
 }

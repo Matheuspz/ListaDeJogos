@@ -12,7 +12,7 @@ public class Jogos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private long id;
-    @Column(unique=true, nullable=false)
+    @Column(nullable=false)
     private String titulo;
     @Column(nullable = false)
     private String desenvolvedora;

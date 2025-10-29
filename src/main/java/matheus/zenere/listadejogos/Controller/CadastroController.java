@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/cadastro")
@@ -21,16 +22,15 @@ public class CadastroController {
 
     @GetMapping
     public String cadastroIndex(final Model model) {
-        model.addAttribute("Jogos", new Jogos());
+        model.addAttribute("jogo", new Jogos());
         return "cadastro";
     }
 
     @PostMapping
-    public String cadastroSave(Jogos jogos) {
-        jogosService.save(jogos);
-        System.out.println(jogos);
-        return "redirect:/cadastro";
+    public String cadastroSave(@ModelAttribute("jogo") Jogos jogo, RedirectAttributes redirectAttributes) {
+        jogosService.save(jogo);
+        redirectAttributes.addFlashAttribute("mensagem", "Jogo cadastrado com sucesso!");
+        return "redirect:/listar";
     }
-
 
 }

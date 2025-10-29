@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Midas Games - Admin</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midas Games Admin</title>
+    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2d9b65e52.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 <header>
-    <div class="logo"><a href="/" style="color: white;">Midas Games</a></div>
+    <a th:href="@{/}" class="logo">MIDAS TEAM</a>
     <nav>
-        <a href="cadastro">Cadastrar Jogos</a>
-        <a href="#">Listar todos</a>
+        <a th:href="@{/cadastro}">Cadastrar Jogos</a>
+        <a th:href="@{/listar}">Listar todos</a>
     </nav>
 </header>
 
-<hr>
-
 <main>
-    <h1>Bem vindo a homepage Admin<br>da<br>Midas Games</h1>
+    <h1>Seja bem-vindo<br>Admin da Midas Games</h1>
 
     <div class="buttons">
-        <button class="btn">
-            <i class="fas fa-plus-circle"><a href="cadastro" style="color: white">Cadastrar Jogos</a></i>
-        </button>
-        <button class="btn">
-            <i class="fas fa-search"></i> Listar Todos
-        </button>
+        <a th:href="@{/cadastro}" class="btn"><i class="fa-solid fa-circle-plus"></i> Cadastrar Jogos</a>
+
+        <div class="divider">
+            <i class="fa-solid fa-angles-left"></i>
+            <i class="fa-regular fa-bookmark"></i>
+            <i class="fa-solid fa-angles-right"></i>
+        </div>
+
+        <a th:href="@{/listar}" class="btn"><i class="fa-solid fa-magnifying-glass"></i> Listar Todos</a>
     </div>
 </main>
-
 </body>
 </html>

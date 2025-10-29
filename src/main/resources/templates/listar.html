@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pessoa - Cadastro</title>
+    <title>Listar Jogos - Midas Games</title>
+    <link rel="stylesheet" href="..\css\listar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2d9b65e52.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <h1>Dados enviados pelo usuário:</h1>
+<header>
+    <a th:href="@{/}" class="logo">MIDAS TEAM</a>
+    <nav>
+        <a th:href="@{/cadastro}">Cadastrar Jogos</a>
+        <a th:href="@{/listar}">Listar todos</a>
+    </nav>
+</header>
 
-    <p>Titulo: <b th:text="${jogos.titulo}"/></p>
-    <p>desenvolvedora: <b th:text="${{jogos.desenvolvedora}}"/></p>
-    <p>preco: <b th:text="${jogos.preco}"/></p>
-    <p>urlImagem: <b th:text="${jogos.urlImagem}"/></p>
-    <p>descricao <b th:text="${jogos.descricao}"/></p>
+<div class="lista-container">
+    <!-- Renderiza cada jogo -->
+    <div class="jogo-card" th:each="jogo : ${listaJogos}">
+        <img th:src="${jogo.urlImagem}" alt="Imagem do jogo">
+
+        <div class="info">
+            <div class="linha">
+                <span th:text="${jogo.titulo}">Título</span>
+                <span th:text="${jogo.desenvolvedora}">Desenvolvedora</span>
+            </div>
+
+            <div class="linha">
+                <span th:text="'R$' + ${#numbers.formatDecimal(jogo.preco, 1, 2)}">R$0,00</span>
+                <a th:href="@{/editar/{id}(id=${jogo.id})}" class="visualizar-btn">Editar</a>
+            </div>
+
+            <p th:text="${jogo.descricao}">Descrição do jogo...</p>
+        </div>
+    </div>
+</div>
+
 </body>
-
 </html>
