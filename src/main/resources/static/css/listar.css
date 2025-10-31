@@ -147,6 +147,24 @@ p {
     background-color: #3f4c88;
 }
 
+.excluir-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.excluir-btn:hover {
+    background-color: #c0392b;
+}
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     header {

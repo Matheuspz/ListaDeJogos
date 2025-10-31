@@ -30,6 +30,9 @@ public class JogosService {
                 .orElseThrow(() -> new RuntimeException("Jogo não encontrado"));
     }
 
+    public void deleteById(Long id) {
+        jogosRepository.deleteById(id);
+    }
 
 
 }

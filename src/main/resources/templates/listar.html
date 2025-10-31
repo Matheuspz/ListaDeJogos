@@ -35,7 +35,17 @@
                 <a th:href="@{/editar/{id}(id=${jogo.id})}" class="visualizar-btn">Editar</a>
             </div>
 
-            <p th:text="${jogo.descricao}">Descrição do jogo...</p>
+            <div class="linha">
+                <p th:text="${jogo.descricao}">Descrição do jogo...</p>
+
+                <form th:action="@{/listar/excluir/{id}(id=${jogo.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="excluir-btn"
+                            onclick="return confirm('Tem certeza que deseja excluir o jogo?');">
+                        <i class="fa-solid fa-trash"></i> Excluir
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>
